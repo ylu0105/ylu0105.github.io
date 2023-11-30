@@ -1,0 +1,42 @@
+name: ipv6-m3u Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 15 19 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: ipv6-m3u Update
+      env:
+        MY_GIT_USER_NAME: ${{ secrets.MYGITUSERNAME }}
+        MY_GIT_USER_EMAIL: ${{ secrets.MYGITUSEREMAIL }}
+        SUB_M3U_URL: ${{ secrets.SUBM3UURL }}
+      run: |
+        if [ -f "./tv/m3u/ipv6.m3u" ];then
+            if [ -f "./tv/m3u/ipv6.m3u.temp" ];then
+                rm -f ./tv/m3u/ipv6.m3u.temp
+            fi
+            wget $SUB_M3U_URL -O ./tv/m3u/ipv6.m3u.temp
+            if cmp -s "./tv/m3u/ipv6.m3u" "./tv/m3u/ipv6.m3u.temp"; then
+                rm -f ./tv/m3u/ipv6.m3u.temp
+                echo "No changes to './tv/m3u/ipv6.m3u'"
+                exit 0;
+            else
+                rm -f ./tv/m3u/ipv6.m3u && mv ./tv/m3u/ipv6.m3u.temp ./tv/m3u/ipv6.m3u
+            fi
+        else
+            if ! [ -d "./tv/m3u/" ];then
+                mkdir -p ./tv/m3u/
+            fi
+            wget $SUB_M3U_URL -O ./tv/m3u/ipv6.m3u
+        fi
+        git config --global user.name $MY_GIT_USER_NAME
+        git config --global user.email $MY_GIT_USER_EMAIL
+        git add ./tv/m3u/ipv6.m3u
+        git commit -m "automatic update ipv6.m3u"
+        git push -f origin main
+        echo "'./tv/m3u/ipv6.m3u' update successful"

@@ -1,0 +1,42 @@
+name: v2 Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 30 * * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: v2 Update
+      env:
+        MY_GIT_USER_NAME: ${{ secrets.MYGITUSERNAME }}
+        MY_GIT_USER_EMAIL: ${{ secrets.MYGITUSEREMAIL }}
+        SUB_V2_URL: ${{ secrets.SUBV2URL }}
+      run: |
+        if [ -f "./sci/v2" ];then
+            if [ -f "./sci/v2.temp" ];then
+                rm -f ./sci/v2.temp
+            fi
+            wget $SUB_V2_URL -O ./sci/v2.temp
+            if cmp -s "./sci/v2" "./sci/v2.temp"; then
+                rm -f ./sci/v2.temp
+                echo "No changes to './sci/v2'"
+                exit 0;
+            else
+                rm -f ./sci/v2 && mv ./sci/v2.temp ./sci/v2
+            fi
+        else
+            if ! [ -d "./sci/" ];then
+                mkdir -p ./sci/
+            fi
+            wget $SUB_V2_URL -O ./sci/v2
+        fi
+        git config --global user.name $MY_GIT_USER_NAME
+        git config --global user.email $MY_GIT_USER_EMAIL
+        git add ./sci/v2
+        git commit -m "automatic update v2"
+        git push -f origin main
+        echo "'./sci/v2' update successful"
