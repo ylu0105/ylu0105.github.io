@@ -1,1 +1,4 @@
-# Thanks to https://github.com/pages-themes/minimal
+# Thanks to:
+```
+https://github.com/pages-themes/minimal
+```
