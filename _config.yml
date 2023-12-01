@@ -1,0 +1,6 @@
+title: Hello World
+# logo: /assets/img/logo.png
+description: I love GitHub,I love freedom.
+show_downloads: false
+google_analytics: false
+theme: jekyll-theme-minimal
