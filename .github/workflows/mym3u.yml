@@ -1,0 +1,41 @@
+name: my-m3u Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 25 19 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: my-m3u Update
+      env:
+        MY_GIT_USER_NAME: ${{ secrets.MYGITUSERNAME }}
+        MY_GIT_USER_EMAIL: ${{ secrets.MYGITUSEREMAIL }}
+      run: |
+        if ! [ -f "./tv/m3u/ipv6.m3u" ];then
+            echo "'./tv/m3u/ipv6.m3u' not found!"
+            exit 0;
+        fi
+        cp ./tv/m3u/ipv6.m3u ./tv/m3u/my.m3u.bak
+        sed -i 's/live.fanmingming.com\/tv/ylu0105.github.io\/tv\/logo/g' ./tv/m3u/my.m3u.bak
+        sed -i 's/live.fanmingming.com\/e.xml/ylu0105.github.io\/tv\/epg\/e.xml/g' ./tv/m3u/my.m3u.bak
+        if [ -f "./tv/m3u/my.m3u" ];then
+            if cmp -s "./tv/m3u/my.m3u" "./tv/m3u/my.m3u.bak"; then
+                rm -f ./tv/m3u/my.m3u.bak
+                echo "No changes to './tv/m3u/my.m3u'"
+                exit 0;
+            else
+                rm -f ./tv/m3u/my.m3u && mv ./tv/m3u/my.m3u.bak ./tv/m3u/my.m3u
+            fi
+        else
+            mv ./tv/m3u/my.m3u.bak ./tv/m3u/my.m3u
+        fi
+        git config --global user.name $MY_GIT_USER_NAME
+        git config --global user.email $MY_GIT_USER_EMAIL
+        git add ./tv/m3u/my.m3u
+        git commit -m "automatic update my.m3u"
+        git push -f origin main
+        echo "'./tv/m3u/my.m3u' update successful"
