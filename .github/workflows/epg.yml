@@ -20,19 +20,22 @@ jobs:
             if [ -f "./tv/epg/e.xml.temp" ];then
                 rm -f ./tv/epg/e.xml.temp
             fi
-            wget $SUB_EPG_URL -O ./tv/epg/e.xml.temp
-            if cmp -s "./tv/epg/e.xml" "./tv/epg/e.xml.temp"; then
-                rm -f ./tv/epg/e.xml.temp
+            wget $SUB_EPG_URL -O ./tv/epg/pp.xml.gz
+            gzip -d ./tv/epg/pp.xml.gz && rm -f ./tv/epg/pp.xml.gz
+            if cmp -s "./tv/epg/e.xml" "./tv/epg/pp.xml"; then
+                rm -f ./tv/epg/pp.xml
                 echo "No changes to './tv/epg/e.xml'"
                 exit 0;
             else
-                rm -f ./tv/epg/e.xml && mv ./tv/epg/e.xml.temp ./tv/epg/e.xml
+                rm -f ./tv/epg/e.xml && mv ./tv/epg/pp.xml ./tv/epg/e.xml
             fi
         else
             if ! [ -d "./tv/epg/" ];then
                 mkdir -p ./tv/epg/
             fi
-            wget $SUB_EPG_URL -O ./tv/epg/e.xml
+            wget $SUB_EPG_URL -O ./tv/epg/pp.xml.gz
+            gzip -d ./tv/epg/pp.xml.gz && rm -f ./tv/epg/pp.xml.gz
+            mv ./tv/epg/pp.xml ./tv/epg/e.xml
         fi
         git config --global user.name $MY_GIT_USER_NAME
         git config --global user.email $MY_GIT_USER_EMAIL
