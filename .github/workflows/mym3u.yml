@@ -33,7 +33,7 @@ jobs:
                 line_end=$((line+1)) #要删除的结束行
                 echo "delete line:$line_start - $line_end"
                 # ./tv/m3u/my.m3u.bak 目标文件
-                sed -i "$line_start,$line_end d" ../tv/m3u/my.m3u.bak
+                sed -i "$line_start,$line_end d" ./tv/m3u/my.m3u.bak
             done
         done
         sed -i 's/live.fanmingming.com\/tv/ylu0105.github.io\/tv\/logo/g' ./tv/m3u/my.m3u.bak
