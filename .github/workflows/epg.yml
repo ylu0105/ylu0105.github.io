@@ -17,8 +17,8 @@ jobs:
         SUB_EPG_URL: ${{ secrets.SUBEPGURL }}
       run: |
         if [ -f "./tv/epg/e.xml" ];then
-            if [ -f "./tv/epg/e.xml.temp" ];then
-                rm -f ./tv/epg/e.xml.temp
+            if [ -f "./tv/epg/pp.xml.gz" ];then
+                rm -f ./tv/epg/pp.xml.gz
             fi
             wget $SUB_EPG_URL -O ./tv/epg/pp.xml.gz
             gzip -d ./tv/epg/pp.xml.gz && rm -f ./tv/epg/pp.xml.gz
