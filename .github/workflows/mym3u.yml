@@ -20,6 +20,22 @@ jobs:
             exit 0;
         fi
         cp ./tv/m3u/ipv6.m3u ./tv/m3u/my.m3u.bak
+        deleteArray=("group-title=\"购物频道\"")
+        for value in "${deleteArray[@]}"
+        do
+            echo "start to delete \"$value\""
+            while true
+            do
+                # ./tv/m3u/my.m3u.bak 目标文件
+                line=$(grep -nE "$value" ./tv/m3u/my.m3u.bak | head -1| awk -F ":" '{print$1}') # 目标字符串行号
+                [ -z "$line" ]&&break # 如果为空，则表示文件中没有该字符串，结束本次循环，继续删除deleteArray 中的下一个字符串
+                line_start=$((line)) # 要删除的起始行
+                line_end=$((line+1)) #要删除的结束行
+                echo "delete line:$line_start - $line_end"
+                # ./tv/m3u/my.m3u.bak 目标文件
+                sed -i "$line_start,$line_end d" ../tv/m3u/my.m3u.bak
+            done
+        done
         sed -i 's/live.fanmingming.com\/tv/ylu0105.github.io\/tv\/logo/g' ./tv/m3u/my.m3u.bak
         sed -i 's/live.fanmingming.com\/e.xml/ylu0105.github.io\/tv\/epg\/e.xml/g' ./tv/m3u/my.m3u.bak
         if [ -f "./tv/m3u/my.m3u" ];then
