@@ -1,0 +1,42 @@
+name: epg Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 45 16-21/1 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: epg Update
+      env:
+        MY_GIT_USER_NAME: ${{ secrets.MYGITUSERNAME }}
+        MY_GIT_USER_EMAIL: ${{ secrets.MYGITUSEREMAIL }}
+        SUB_EPG_URL: ${{ secrets.SUBEPGURL }}
+      run: |
+        if [ -f "./tv/epg/e.xml" ];then
+            if [ -f "./tv/epg/e.xml.temp" ];then
+                rm -f ./tv/epg/e.xml.temp
+            fi
+            wget $SUB_EPG_URL -O ./tv/epg/e.xml.temp
+            if cmp -s "./tv/epg/e.xml" "./tv/epg/e.xml.temp"; then
+                rm -f ./tv/epg/e.xml.temp
+                echo "No changes to './tv/epg/e.xml'"
+                exit 0;
+            else
+                rm -f ./tv/epg/e.xml && mv ./tv/epg/e.xml.temp ./tv/epg/e.xml
+            fi
+        else
+            if ! [ -d "./tv/epg/" ];then
+                mkdir -p ./tv/epg/
+            fi
+            wget $SUB_EPG_URL -O ./tv/epg/e.xml
+        fi
+        git config --global user.name $MY_GIT_USER_NAME
+        git config --global user.email $MY_GIT_USER_EMAIL
+        git add ./tv/epg/e.xml
+        git commit -m "automatic update epg"
+        git push -f origin main
+        echo "'./tv/epg/e.xml' update successful"
