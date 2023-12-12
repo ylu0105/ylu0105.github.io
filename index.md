@@ -15,7 +15,11 @@ layout: default
   
 ### m3u
 ```plaintext
-https://ylu0105.github.io/tv/m3u/ipv6.m3u
+https://ylu0105.github.io/tv/m3u/my.m3u
+```
+### epg
+```plaintext
+https://ylu0105.github.io/tv/epg/e.xml
 ```
 ### v2ray
 ```plaintext
