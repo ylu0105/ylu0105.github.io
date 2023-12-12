@@ -6,8 +6,4 @@
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/ylu0105/ylu0105.github.io">
 <img alt="GitHub" src="https://img.shields.io/github/license/ylu0105/ylu0105.github.io">
 </p>
-
-# Thanks to:
-```
-https://github.com/pages-themes/minimal
-```
+<h1 align="center">for personal use only</h1>
