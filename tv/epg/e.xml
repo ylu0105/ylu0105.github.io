@@ -25071,6 +25071,12 @@
 	<programme channel="咪咕综合体育" start="20240920012000 +0800" stop="20240920030000 +0800">
 		<title lang="zh">英超赛场-24/25赛季英超 第1轮 切尔西-曼城</title>
 	</programme>
+	<programme channel="咪咕综合体育" start="20240920030000 +0800" stop="20240920031000 +0800">
+		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕综合体育" start="20240920031000 +0800" stop="20240920040000 +0800">
+		<title lang="zh">欧陆足球版图</title>
+	</programme>
 	<channel id="咪咕足球">
 		<display-name lang="zh">咪咕足球</display-name>
 	</channel>
@@ -25082,6 +25088,9 @@
 	</programme>
 	<programme channel="咪咕足球" start="20240920022600 +0800" stop="20240920024100 +0800">
 		<title lang="zh">频道宣传</title>
+	</programme>
+	<programme channel="咪咕足球" start="20240920024100 +0800" stop="20240920042100 +0800">
+		<title lang="zh">2024NBL第6轮 合肥狂风峻茂-广西威壮</title>
 	</programme>
 	<channel id="嘉佳卡通">
 		<display-name lang="zh">嘉佳卡通</display-name>
@@ -48717,6 +48726,9 @@
 	<programme channel="纯享4K" start="20240920022900 +0800" stop="20240920030900 +0800">
 		<title lang="zh">荣宝斋4K 第3集 斋藏绝技</title>
 	</programme>
+	<programme channel="纯享4K" start="20240920030900 +0800" stop="20240920034900 +0800">
+		<title lang="zh">荣宝斋4K 第4集 文会知音   </title>
+	</programme>
 	<channel id="经典剧场">
 		<display-name lang="zh">经典剧场</display-name>
 	</channel>
@@ -59250,6 +59262,9 @@
 	<programme channel="黑莓动画" start="20240920014900 +0800" stop="20240920023500 +0800">
 		<title lang="zh">骸骨骑士大人奇幻世界冒险中</title>
 	</programme>
+	<programme channel="黑莓动画" start="20240920023500 +0800" stop="20240920032400 +0800">
+		<title lang="zh">星辰变第二季</title>
+	</programme>
 	<channel id="黑莓电影">
 		<display-name lang="zh">黑莓电影</display-name>
 	</channel>
@@ -59745,6 +59760,9 @@
 	<programme channel="newtv超级综艺" start="20240920015400 +0800" stop="20240920032400 +0800">
 		<title lang="zh">中国b7保定乡村音乐大会</title>
 	</programme>
+	<programme channel="newtv超级综艺" start="20240920032400 +0800" stop="20240920034400 +0800">
+		<title lang="zh">文化十分</title>
+	</programme>
 	<channel id="newtv超级体育">
 		<display-name lang="zh">NEWTV超级体育</display-name>
 	</channel>
@@ -59759,6 +59777,9 @@
 	</programme>
 	<programme channel="newtv超级电影" start="20240920014600 +0800" stop="20240920031500 +0800">
 		<title lang="zh">钧瓷蛤蟆砚</title>
+	</programme>
+	<programme channel="newtv超级电影" start="20240920031500 +0800" stop="20240920043100 +0800">
+		<title lang="zh">十二怒汉（上）</title>
 	</programme>
 	<channel id="newtv超级电视剧">
 		<display-name lang="zh">NEWTV超级电视剧</display-name>
@@ -59775,6 +59796,9 @@
 	<programme channel="newtv超级电视剧" start="20240920022700 +0800" stop="20240920031200 +0800">
 		<title lang="zh">05_天底良知</title>
 	</programme>
+	<programme channel="newtv超级电视剧" start="20240920031200 +0800" stop="20240920035700 +0800">
+		<title lang="zh">06_天底良知</title>
+	</programme>
 	<channel id="newtv精品大剧">
 		<display-name lang="zh">NEWTV精品大剧</display-name>
 	</channel>
@@ -59783,6 +59807,9 @@
 	</programme>
 	<programme channel="newtv精品大剧" start="20240920013700 +0800" stop="20240920023200 +0800">
 		<title lang="zh">15_公诉</title>
+	</programme>
+	<programme channel="newtv精品大剧" start="20240920023200 +0800" stop="20240920032700 +0800">
+		<title lang="zh">16_公诉</title>
 	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
@@ -59796,6 +59823,9 @@
 	<programme channel="newtv精品纪录" start="20240920013900 +0800" stop="20240920023600 +0800">
 		<title lang="zh">阿尔茨海默病能治愈吗</title>
 	</programme>
+	<programme channel="newtv精品纪录" start="20240920023600 +0800" stop="20240920034300 +0800">
+		<title lang="zh">人类基因组</title>
+	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
 	</channel>
@@ -59807,6 +59837,9 @@
 	</programme>
 	<programme channel="newtv古装剧场" start="20240920020400 +0800" stop="20240920030100 +0800">
 		<title lang="zh">17_厨子当官</title>
+	</programme>
+	<programme channel="newtv古装剧场" start="20240920030100 +0800" stop="20240920034900 +0800">
+		<title lang="zh">18_厨子当官</title>
 	</programme>
 	<channel id="newtv军旅剧场">
 		<display-name lang="zh">NEWTV军旅剧场</display-name>
@@ -59831,6 +59864,9 @@
 	</programme>
 	<programme channel="newtv家庭剧场" start="20240920021400 +0800" stop="20240920025900 +0800">
 		<title lang="zh">28_小棉袄</title>
+	</programme>
+	<programme channel="newtv家庭剧场" start="20240920025900 +0800" stop="20240920035500 +0800">
+		<title lang="zh">29_小棉袄</title>
 	</programme>
 	<channel id="newtv热播精选">
 		<display-name lang="zh">NEWTV热播精选</display-name>
@@ -59883,6 +59919,9 @@
 	<programme channel="newtv潮妈辣婆" start="20240920015200 +0800" stop="20240920024800 +0800">
 		<title lang="zh">01_三国机密</title>
 	</programme>
+	<programme channel="newtv潮妈辣婆" start="20240920024800 +0800" stop="20240920034300 +0800">
+		<title lang="zh">02_三国机密</title>
+	</programme>
 	<channel id="newtv军事评论">
 		<display-name lang="zh">NEWTV军事评论</display-name>
 	</channel>
@@ -59897,6 +59936,12 @@
 	</programme>
 	<programme channel="newtv炫舞未来" start="20240920013600 +0800" stop="20240920025500 +0800">
 		<title lang="zh">金牌喜剧班（20210214）</title>
+	</programme>
+	<programme channel="newtv炫舞未来" start="20240920025500 +0800" stop="20240920030300 +0800">
+		<title lang="zh">《广场舞》 羊年吉祥（附教学）</title>
+	</programme>
+	<programme channel="newtv炫舞未来" start="20240920031100 +0800" stop="20240920031900 +0800">
+		<title lang="zh">《广场舞》 羊羊得意（附教学）</title>
 	</programme>
 	<channel id="newtv精品综合">
 		<display-name lang="zh">NEWTV精品综合</display-name>
@@ -59919,11 +59964,17 @@
 	<programme channel="newtv惊悚悬疑" start="20240920021000 +0800" stop="20240920031300 +0800">
 		<title lang="zh">东海异闻录</title>
 	</programme>
+	<programme channel="newtv惊悚悬疑" start="20240920031300 +0800" stop="20240920042200 +0800">
+		<title lang="zh">不能犯规的游戏之惊魂幻觉</title>
+	</programme>
 	<channel id="newtv金牌综艺">
 		<display-name lang="zh">NEWTV金牌综艺</display-name>
 	</channel>
 	<programme channel="newtv金牌综艺" start="20240920000200 +0800" stop="20240920024700 +0800">
 		<title lang="zh">生活最有戏（2022）</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20240920024700 +0800" stop="20240920035900 +0800">
+		<title lang="zh">恰好是少年</title>
 	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
