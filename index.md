@@ -17,6 +17,8 @@ layout: default
 ```plaintext
 https://ylu0105.github.io/tv/m3u/my.m3u
 ```
+### [m3u-player](https://ylu0105.github.io/tv/player/?vurl=https://1500005692.vod2.myqcloud.com/43843706vodtranscq1500005692/62656d94387702300542496289/v.f100240.m3u8)
+
 ### epg
 ```plaintext
 https://ylu0105.github.io/tv/epg/e.xml
