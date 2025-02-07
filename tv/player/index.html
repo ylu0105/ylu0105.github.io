@@ -14,7 +14,7 @@
 <a href="https://ylu0105.github.io" target="_blank"><img id="logo" src="https://ylu0105.github.io/assets/img/logo.png" style="width:135px; height:76px; z-index:999;position:absolute;right:50px;top:50px"></a>
 <script>
 playurl = location.href.split('?vurl=')[1];
-var player = TCPlayer('player-container-id', {});
+var player = TCPlayer('player-container-id', {"muted":true});
 player.src(playurl);
 player.autoplay(1);
 </script>
