@@ -1,22 +1,34 @@
 <html>
+
 <head>
-<meta charset="UTF-8" />
-<title>LIVE视频播放器</title>
-<link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/tcplayer.min.css" rel="stylesheet"/>
-<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/libs/TXLivePlayer-1.2.3.min.js"></script>
-<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/libs/hls.min.1.1.6.js"></script>
-<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/libs/flv.min.1.6.3.js"></script>
-<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/libs/dash.all.min.4.5.2.js"></script>
-<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.8.0/tcplayer.v4.8.0.min.js"></script>
+  <meta charset="UTF-8" />
+  <title>LIVE视频播放器</title>
+  <link rel="stylesheet"
+    href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.27.1/skins/default/aliplayer-min.css" />
+  <script charset="utf-8" type="text/javascript"
+    src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.27.1/aliplayer-min.js"></script>
 </head>
-<body bgcolor="black" style="margin:0">
-<video id="player-container-id" style="width:100%;height:100%" preload="auto" playsinline webkit-playsinline></video>
-<a href="https://ylu0105.github.io" target="_blank"><img id="logo" src="https://ylu0105.github.io/assets/img/logo.png" style="width:135px; height:76px; z-index:999;position:absolute;right:50px;top:50px"></a>
-<script>
-playurl = location.href.split('?vurl=')[1];
-var player = TCPlayer('player-container-id', {"muted":true});
-player.src(playurl);
-player.play();
-</script>
+
+<body bgcolor="black" style="margin:10px">
+  <div id="J_prismPlayer" style="width:100%;height:100%;margin:auto"></div>
+  <script>
+    playurl = location.href.split('?vurl=')[1];
+    var player = new Aliplayer({
+      id: 'J_prismPlayer',
+      source: playurl,
+      isLive: false,
+      mute: true,
+      logo: [{
+        width: 5,
+        position: 'top-right',
+        origin: 'content',
+        offsetX: -3,
+        offsetY: 3,
+        src: 'https://ylu0105.github.io/assets/img/logo.png'
+      }]
+    }, function (player) {
+      player.play()
+    });</script>
 </body>
+
 </html>
