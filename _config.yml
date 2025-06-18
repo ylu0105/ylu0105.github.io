@@ -4,3 +4,5 @@ description: I love GitHub,I love freedom.
 show_downloads: false
 google_analytics: false
 theme: jekyll-theme-minimal
+mime_types:
+  .m3u: text/plain
